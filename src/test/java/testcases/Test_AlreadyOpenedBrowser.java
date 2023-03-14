@@ -57,6 +57,7 @@ public class Test_AlreadyOpenedBrowser {
 		//get browser capabilities in key value pairs
 		Capabilities c = ((RemoteWebDriver) driver1).getCapabilities();
 		Map<String, Object> m = c.asMap();
+		
 //		m.forEach((key, value) -> {
 //			System.out.println("Key is: " + key + " Value is: " + value);
 //		});
