@@ -57,9 +57,9 @@ public class Test_AlreadyOpenedBrowser {
 		//get browser capabilities in key value pairs
 		Capabilities c = ((RemoteWebDriver) driver1).getCapabilities();
 		Map<String, Object> m = c.asMap();
-		m.forEach((key, value) -> {
-			System.out.println("Key is: " + key + " Value is: " + value);
-		});
+//		m.forEach((key, value) -> {
+//			System.out.println("Key is: " + key + " Value is: " + value);
+//		});
 		//set implicit wait
 		driver1.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		driver1.get("https://www.tutorialspoint.com/about/about_careers.htm");
