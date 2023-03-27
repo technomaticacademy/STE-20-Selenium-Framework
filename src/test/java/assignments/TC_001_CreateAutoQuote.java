@@ -1,4 +1,4 @@
-package testcases;
+package assignments;
 
 import java.time.Duration;
 import java.util.NoSuchElementException;

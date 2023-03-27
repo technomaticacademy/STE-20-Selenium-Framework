@@ -40,6 +40,8 @@ public class HomePage extends GenericReusbales {
 	By EDT_USERNAME = By.cssSelector("input[id='txtUsername']");
 	By EDT_PASSWORD = By.cssSelector("input[id='txtPassword']");
 	By BTN_LOGIN = By.cssSelector("input[id='btnLogin']");
+	By BUZZ = By.xpath("//span[text()='Buzz']");
+	
 
 	/**
 	 * To launch application and login
@@ -48,8 +50,6 @@ public class HomePage extends GenericReusbales {
 	 */
 	public void launchApp() throws Exception {
 		
-		String user = datatable.getCellData("Username");
-		String password = datatable.getCellData("Password");
 		
 		// Launch url
 		String URL_VAR = "url_" + environment;
@@ -81,5 +81,8 @@ public class HomePage extends GenericReusbales {
 	 object.click(By.xpath(AutoXPath), "Auto link");
  }
 	
+ public void navigateToBuzz() throws Exception {
+	 object.click(BUZZ, "Buzz");
+ }
 
 }

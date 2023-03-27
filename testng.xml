@@ -8,9 +8,8 @@
 			 <!-- <class name="testcases.TC_001_SampleFunc" />
 			<class name="testcases.TC_TEMPLATE" /> -->
 			
-			<class name="testcases.PROG_001" />
-			<class name="testcases.PROG_002" />
-			<class name="testcases.PROG_003" />
+			<class name="testcases.TC001_CreatePost_Buzz" />
+			
 			
 			
 

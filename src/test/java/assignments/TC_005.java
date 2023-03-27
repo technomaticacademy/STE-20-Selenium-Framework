@@ -1,4 +1,4 @@
-package testcases;
+package assignments;
 
 public class TC_005 {
 
