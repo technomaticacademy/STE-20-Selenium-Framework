@@ -1,10 +1,12 @@
 package pages;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import com.aventstack.extentreports.Status;
 
@@ -45,6 +47,24 @@ public class AutoPage extends GenericReusbales {
 		
 		object.set(By.xpath(zipXpath),"10001","Zip Code");
 		object.click(By.xpath(GetQuote),"Get a Quote");
+		
+		if(object.isElementPresent(By.xpath(GetQuote))) {
+			reporting.report(Status.PASS, "Get Quote button is present");
+		} else
+			reporting.report(Status.FAIL, "Get Quote button is not present");
+		
+		
+		By TAB = By.xpath("//div[@role='tablist']");
+		String[] TAB_NAME = null;
+		int index=0;
+		
+		List<WebElement> lst_TAB = driver.findElements(TAB);
+		
+		for(WebElement ele:lst_TAB) {
+			TAB_NAME[index] = ele.getText();
+			index=index+1;
+		}
+		
 	}
 	
 

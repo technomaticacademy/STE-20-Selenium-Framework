@@ -61,6 +61,8 @@ public class HomePage extends GenericReusbales {
 		// Implicit Wait
 		driver.manage().timeouts().implicitlyWait(MAX_TIMEOUT, TimeUnit.SECONDS);
 
+		
+		driver.findElements(By.xpath("//div[@role='row']/div[2]")).size();
 	}
 
 	/**

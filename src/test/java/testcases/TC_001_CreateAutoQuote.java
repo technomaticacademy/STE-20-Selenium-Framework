@@ -9,6 +9,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import core.Base;
@@ -36,7 +38,7 @@ public class TC_001_CreateAutoQuote extends Base {
 			auto = new AutoPage(testcase);
 
 			//Launch the URL
-			homepage.launchApp();
+			
 			
 			//createAutoQuote();
 			
@@ -58,6 +60,24 @@ public class TC_001_CreateAutoQuote extends Base {
 		} catch (Exception e) {
 			teardownexception(reporting, e);
 		}
+	}
+	
+	
+	@BeforeTest
+	public void test2() throws Exception {
+		HomePage homepage = new HomePage(testcase);
+		homepage.launchApp();
+	}
+	
+	@AfterTest
+	public void test3() throws Exception {
+		HomePage homepage = new HomePage(testcase);
+		homepage.closeApp();
+	}
+	
+	@Test
+	public void test4() {
+		
 	}
 	
 	
