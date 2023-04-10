@@ -3,13 +3,12 @@ package testcases;
 import org.testng.annotations.Test;
 
 import core.Base;
-import pages.AddTackerCommentMissing;
+
 import pages.AddTrackerLog;
-import pages.AddTrackerLogMissing;
+
 import pages.Add_login_button;
 import pages.Dashboard_page;
-import pages.Employ_tracker_Log_delete;
-import pages.Employ_tracker_Log_edit;
+
 import pages.Employ_tracker_screen;
 import pages.HRM_LoginPage;
 import pages.HomePage;
@@ -26,6 +25,7 @@ public class TC_003_HRM15 extends Base {
 	HomePage homepage;
 	Reporting reporting;
 
+	
 	@Test
 	public void testcase() {
 		try {
@@ -36,36 +36,20 @@ public class TC_003_HRM15 extends Base {
 			Employ_tracker_screen ET = new Employ_tracker_screen(testcase);
 			Add_login_button AD = new Add_login_button(testcase);
 			AddTrackerLog AL = new AddTrackerLog(testcase);
-			Employ_tracker_Log_delete LD =new Employ_tracker_Log_delete(testcase);
-			AddTackerCommentMissing CM = new AddTackerCommentMissing(testcase);
-			Employ_tracker_Log_edit ED =  new Employ_tracker_Log_edit(testcase);
-			AddTrackerLogMissing ML = new AddTrackerLogMissing (testcase);
-			homepage.launchApp();
+			//Employ_tracker_Log_delete LD =new Employ_tracker_Log_delete(testcase);
+			
+			//Employ_tracker_Log_edit ED =  new Employ_tracker_Log_edit(testcase);
+						homepage.launchApp();
 
 			//Login the application
 			lg.log_in();
 			//navigate to performance screen
 		   DB.NavigateToPerformanceScreen();
 			
-			//click on employ trackers
-		   ET.TrackerTabScreen();
-		   //click on ADD LOG
-		   ED.Edit_log();
-		   //write only comment credential
-		   ML.AddLogMissing();
-		  
-		   
-		   // after clicking on Employee record button able to delete the  log
-		   
-		   
-		   
-		   
-		   
-		   
-		   
-		
-		   
-			homepage.closeApp();
+		 //write only comment credential
+		   ET.Edit_logLogMissing();
+		  // close browser
+		    homepage.closeApp();
 
 		} catch (Exception e) {
 			teardownexception(reporting, e);

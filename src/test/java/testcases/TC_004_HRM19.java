@@ -3,18 +3,15 @@ package testcases;
 import org.testng.annotations.Test;
 
 import core.Base;
-import pages.AddTrackerLog;
-import pages.Add_login_button;
-import pages.Dashboard_page;
-
-import pages.Employ_tracker_screen;
+import pages.Emergency_Contacts;
 import pages.HRM_LoginPage;
+import pages.HRM_My_Info;
 import pages.HomePage;
 import utils.Reporting;
 
-public class TC_001_HRM15 extends Base {
+public class TC_004_HRM19 extends Base {
 
-	public TC_001_HRM15() {
+	public TC_004_HRM19() {
 		testcasename = this.getClass().getSimpleName();
 		testcase.put("testcasename", testcasename);
 		description = "To check the sample functionality of the application";
@@ -25,27 +22,23 @@ public class TC_001_HRM15 extends Base {
 
 	@Test
 	public void testcase() {
-	
 		try {
 			homepage = new HomePage(testcase);
 			reporting = new Reporting(testcase);
 			HRM_LoginPage lg = new HRM_LoginPage(testcase);
-			Dashboard_page DB = new Dashboard_page(testcase);
-			Employ_tracker_screen ET = new Employ_tracker_screen(testcase);
-			Add_login_button AD = new Add_login_button(testcase);
-			AddTrackerLog AL = new AddTrackerLog(testcase);
-			
-			
+			HRM_My_Info MI = new HRM_My_Info(testcase);
+			Emergency_Contacts EC=new Emergency_Contacts(testcase);
 			homepage.launchApp();
-
-			//Login the application
 			lg.log_in();
-			//navigate to performance screen
-		   DB.NavigateToPerformanceScreen();
-		   //Edit login credential
-		   ET.Edit_log();
-		  // close browser
-		    homepage.closeApp();
+			MI.MyInfo();
+			EC.EmergencyContacts();
+			EC.Add_Button();
+			EC.Add_contacts_without_relationship();
+		//	
+			
+			////*[text()='Assigned Emergency Contacts']/../button
+			
+			homepage.closeApp();
 
 		} catch (Exception e) {
 			teardownexception(reporting, e);

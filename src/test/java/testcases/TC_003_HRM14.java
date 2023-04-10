@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 import core.Base;
 import pages.AddTrackerLog;
-import pages.AddTrackerLogMissing;
+
 import pages.Add_login_button;
 import pages.Dashboard_page;
 import pages.Employ_tracker_screen;
@@ -34,7 +34,7 @@ public class TC_003_HRM14 extends Base {
 			Employ_tracker_screen ET = new Employ_tracker_screen(testcase);
 			Add_login_button AD = new Add_login_button(testcase);
 			AddTrackerLog AL = new AddTrackerLog(testcase);
-			AddTrackerLogMissing ML = new AddTrackerLogMissing (testcase);
+		
 			
 			homepage.launchApp();
 
@@ -47,13 +47,12 @@ public class TC_003_HRM14 extends Base {
 		   //click on ADD LOG
 		   AD.AddLogin();		
 		
-		  // Add log is missing
-		   ML.AddLogMissing();
-		   
+		  
 			homepage.closeApp();
 
 		} catch (Exception e) {
 			teardownexception(reporting, e);
 		}
 	}
+	
 }

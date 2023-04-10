@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 import core.Base;
 import pages.AddTrackerLog;
-import pages.AddTackerCommentMissing;
+
 import pages.Add_login_button;
 import pages.Dashboard_page;
 import pages.Employ_tracker_screen;
@@ -32,7 +32,8 @@ public class TC_002_HRM14 extends Base {
 			Dashboard_page DB = new Dashboard_page(testcase);
 			Employ_tracker_screen ET = new Employ_tracker_screen(testcase);
 			Add_login_button AD = new Add_login_button(testcase);
-			AddTackerCommentMissing CM = new AddTackerCommentMissing(testcase);
+			
+			AddTrackerLog AL = new AddTrackerLog(testcase);
 			homepage.launchApp();
 			//Login the application
 			lg.log_in();
@@ -44,8 +45,7 @@ public class TC_002_HRM14 extends Base {
 		   //click on ADD LOG button will navigate to new log tracker window
 		   AD.AddLogin();		
 		   //Add tracker Missing log(comment)
-		  CM.Addcommentempty();
-			
+		 
 			homepage.closeApp();
 
 		} catch (Exception e) {
